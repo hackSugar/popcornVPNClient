@@ -1,0 +1,17 @@
+[submodule "android/app/src/main/vpn_core/openvpn"]
+	path = android/app/src/main/vpn_core/openvpn
+	url = ssh://git@ssh.github.com:443/tmthecoder/openvpn.git
+	branch = icsopenvpn
+[submodule "android/app/src/main/vpn_core/openssl"]
+	path = android/app/src/main/vpn_core/openssl
+	url = ssh://git@ssh.github.com:443/tmthecoder/platform_external_openssl.git
+	branch = icsopenvpn
+[submodule "android/app/src/main/vpn_core/mbedtls"]
+	path = android/app/src/main/vpn_core/mbedtls
+	url = ssh://git@ssh.github.com:443/ARMmbed/mbedtls.git
+[submodule "android/app/src/main/vpn_core/asio"]
+	path = android/app/src/main/vpn_core/asio
+	url = ssh://git@ssh.github.com:443/chriskohlhoff/asio.git
+[submodule "android/app/src/main/vpn_core/lz4"]
+	path = android/app/src/main/vpn_core/lz4
+	url = ssh://git@ssh.github.com:443/lz4/lz4.git
