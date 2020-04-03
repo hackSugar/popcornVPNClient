@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(MyApp());
 
@@ -45,6 +46,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  static const platform = const MethodChannel('com.tejasmehta.popcorn_vpn/vpnManager');
 
   void _incrementCounter() {
     setState(() {
@@ -102,10 +105,22 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: connect,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  Future<void> connect() async {
+    String connState;
+    try {
+      print("HERE");
+      final int result = await platform.invokeMethod('connect', {"MSG" : "HI", "MSG2" : 1});
+      print(result);
+    } on PlatformException catch (e) {
+      connState = "Failed to get battery level: '${e.message}'.";
+    }
+  }
+
 }
